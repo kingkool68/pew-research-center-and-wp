@@ -1,0 +1,58 @@
+abbr[title],
+acronym[title] {
+border-bottom: 0.095em dotted #3B759E;
+cursor: help;
+}
+h1 abbr[title],
+h1 acronym[title],
+h2 abbr[title],
+h2 acronym[title] {
+border-bottom:0 none;
+}
+.reveal section img.no-border {
+border:0 none;
+box-shadow:none;
+}
+
+.graph .bar {
+width:42%;
+}
+.graph .bar span {
+display:block;
+height:1em;
+background-color:#3B759E;
+}
+p.tweet-me {
+text-align:center;
+padding-top:1.25em;
+}
+.reveal section .tweet-me img {
+display:block;
+margin:0 auto;
+}
+.reveal p.via {
+font-size:75%;
+font-style:italic;
+padding-top:0.5em;
+}
+
+body.print-pdf img.stretch {
+max-width:75%;
+}
+
+/* Animating full-screen images to scroll automagically */
+.reveal .slides>section.full-bleed a {
+display:block;
+min-height:640px;
+}
+.reveal .slide-background {
+background-position:0 100%;
+}
+.slide-background.present[data-background-hash] {
+background-position:0 0;
+-webkit-animation: animatedBackground 55s 1.5s infinite ease alternate;
+}
+@-webkit-keyframes animatedBackground {
+	from { background-position: 0 0; }
+	to { background-position: 0 100%; }
+}

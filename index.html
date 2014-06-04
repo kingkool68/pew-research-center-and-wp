@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>The Pew Research Center &amp; WordPress</title>
+
+		<meta name="description" content="Slides from my WordCamp Baltimore talk about caching">
+		<meta name="author" content="Russell Heimlich">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="reveal.js/css/reveal.min.css">
+		<link rel="stylesheet" href="reveal.js/css/theme/sky.css" id="theme">
+		<link rel="stylesheet" href="css/overrides.css">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="reveal.js/lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			
+			<!--
+			- Intro
+				* What will this talk cover
+			- About Me
+			- About the Pew Research Center
+				* Mission of the Pew Research Center
+				* History, how the center was formed
+				* What was my role when I was hired?
+			- What technology were all of the sites running?
+				* 5 sites, custom PHP/MySQL CMS built in house
+				* 1 site, Sitecore
+				* 1 site, old version of Drupal
+				* 1 site, began migration to Ektron 
+			- What types of content were we publishing?
+				* Executive summary and a link to a PDF
+			_ We Needed a Proper CMS
+				* The Access Incident
+				* Which CMS to choose?
+				* Homegrown becomes a mess
+				* The more you pay the crappier the UX
+				* "How technical are the end users that I need to design for?" https://twitter.com/kingkool68/statuses/32179949456592896?tw_i=32179949456592896&tw_e=details&tw_p=archive 
+				* What if we just used WordPress
+			- Spoiler Alert, We Chose WordPress
+				
+			- Single Site or Multisite?
+				* Defitely multisite
+				* More set-up work, but so worth it
+			- Began Converting Sites
+				* Redesigned PewGlobal.org in November 2009 https://www.flickr.com/photos/kingkool68/4059477060/in/set-72157636073282184
+				* Launched PewGlobal.org on WordPress in XXXX
+				* Launched PewSocialTrends.org on XXXX
+				* Launched People-Press.org on XXXX
+				* Launched PewHispanic.org on XXXX
+				* Launched PewForum.org on XXXX
+				* Launched PewResearch.org on XXXX
+				* Launched Journalism.org on XXXX
+				* Launched PewInternet.org on XXXX
+			- Google Search Appliance
+				* Better search across all of the sites
+				* No one is ever happy with search
+				
+			- Scaling
+				* Big boy website
+				* Run everything from a CDN for redundancy/performance
+				* One night we had XX,XXX visits in an hour
+			- Neat Features
+				* Taxonomies
+				* Multi-section Reports
+				* Quiz Tool
+				* Data Trends
+				* Journalism's Daily Briefing
+				* Package Pages
+				* Archive Filters
+				* Custom Feeds
+				* Media Library Enhancements
+				* Infinite Scroll
+				* Plugin Enhancements
+				* Report Materials
+			
+			- The Future
+			
+			- Take Aways
+				* Prototype and Iterate
+				* Are your sites supposed to work together or be completely separate?
+				* Simplify, remove complexities
+			-->
+			
+			<div class="slides">
+				<section>
+					<h1>The Pew Research Center &amp; WordPress</h1>
+					<p class="fragment">How I Spent the Last 5 Years Playing with WordPress and Building PewResearch.org</p>
+				</section>
+				
+				<section>
+					<h1>Intro</h1>
+				</section>
+				
+				<section>
+					<h2>What will this talk cover?</h2>
+					<ul>
+						<li>TKTK</li>
+					</ul>
+				</section>
+				
+				<section>
+					<h2>About Me</h2>
+					<ul>
+						<li>Graduate of AiPH</li>
+						<li>Formerly at USNews.com</li>
+						<li>Lead Developer at PewResearch.org</li>
+					</ul>
+				</section>
+				
+				<section>
+					<h1>About the Pew Research Center</h1>
+				</section>
+				
+				<section>
+					<h2>Mission</h2>
+					<blockquote>
+						<p>The Pew Research Center is a nonpartisan fact tank that informs the public about the issues, attitudes and trends shaping America and the world.</p>
+						<p>The center's mission is to generate a foundation of facts that can enrich the public dialogue and support sound decision-making. As a neutral source of data and analysis, Pew Research does not take policy positions.
+</p>
+						<cite><a href="http://www.pewresearch.org/about/mission-and-history/">pewresearch.org/about/mission-and-history/</a></cite>			
+					</blockquote>
+				</section>
+				
+				<section>
+					<h2>History</h2>
+					<table>
+						<thead>
+							<tr>
+								<th>Project</th>
+								<th>Founding</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>People-Press.org</td>
+								<td>1993</td>
+							</tr>
+							<tr>
+								<td>Journalism.org</td>
+								<td>1997</td>
+							</tr>
+							<tr>
+								<td>PewInternet.org</td>
+								<td>1999</td>
+							</tr>
+							<tr>
+								<td>PewForum.org</td>
+								<td>2001</td>
+							</tr>
+							<tr>
+								<td>PewHispanic.org</td>
+								<td>2001</td>
+							</tr>
+							<tr>
+								<td>PewGlobal.org</td>
+								<td>2001</td>
+							</tr>
+							<tr class="highlight">
+								<td>PewResearch.org</td>
+								<td>2004</td>
+							</tr>
+							<tr>
+								<td>PewSocialTrends.org</td>
+								<td>2005</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+				
+				<section>
+					<h2>Founding of the Center</h2>
+					<p>In 2004, the Pew Research Center was founded to house all of the separate projects and share resources.</p>	
+				</section>
+				
+				<section>
+					<p>Before I was hired, IT ran the websites because they knew computers.</p>
+				</section>
+				
+				<section>
+					<h2>My First Day&hellip;</h2>
+					<p class="fragment">(Paperwork)</p>
+				</section>
+				
+				<section>
+					<h2>My Second Day</h2>
+					<ul>
+						<li>How are the sites built?</li>
+						<li>What was the goal of the websites?</li>
+						<li>What were the biggest pain points of the websites?</li>
+					</ul>
+				</section>
+				
+				<section>
+					<h2>What technology was powering the websites?</h2>
+					<ul>
+						<li class="fragment"><strong>5</strong> were running a home-grown CMS (PHP/MySQL)</li>
+						<li class="fragment"><strong>1</strong> was running on Sitecore (.NET)</li>
+						<li class="fragment"><strong>1</strong> was running on an old version of Drupal (PHP/MySQL)</li>
+						<li class="fragment"><strong>1</strong> was beginning a migration to Ektron (.NET)</li>
+					</ul>
+				</section>
+				
+				<section>
+					<h2>What were we publishing?</h2>
+					<ul>
+						<li>Reports - An executive summary with a link to a PDF</li>
+						<li>Media Mentions - Links to noteable external articles</li>
+						<li>Datasets - Zip archives of survey data</li>
+						<li>Occasional Special Features</li>
+						<li>Archives</li>
+					</ul>
+				</section>
+				
+				<section>
+					<h2>Technical capabilities of CMS users?</h2>
+					<p>https://twitter.com/kingkool68/statuses/32179949456592896</p>
+				</section>
+				
+				<section>
+					<h2>My Goal</h2>
+					<p>To eliminate technical barriers so researchers could spend more time researching and less time fiddling with the website.</p>
+				</section>
+				
+				<section>
+					<h2>The Microsoft Access Incident</h2>
+				</section>
+				
+				<section>
+					<h1>We needed a proper CMS</h1>
+				</section>
+				<section>
+					<h2>Which one to choose?</h2>
+					<ul>
+						<li class="fragment">Enterprise Solution?</li>
+						<li class="fragment">Open Source?</li>
+						<li class="fragment">Home grown/Roll our own?</li>
+					</ul>
+				</section>
+				
+				<section>
+					<h2>The more you pay, the crappier the CMS</h2>
+					<p>(Graph)</p>
+				</section>
+				
+				<section>
+					<h2>Crazy idea!</h2>
+					<p class="fragment">What if we used WordPress?</p>
+				</section>
+				
+				<section>
+					<h2>Spoiler Alert!</h2>
+					<p>We chose WordPress.</p>
+					<ul>
+						<li class="fragment">Friendly interface</li>
+						<li class="fragment">Ease of use</li>
+						<li class="fragment">Flexibility</li>
+						<li class="fragment">Large Community</li>
+						<li class="fragment">It clicked with me!</li>
+					</ul>
+				</section>
+				
+				<section>
+					<h2>Single Instances or Multisite?</h2>
+					<ul>
+						<li class="fragment">Shared plugins across sites</li>
+						<li class="fragment">Shared user accounts across sites</li>
+						<li class="fragment">More complicated set-up</li>
+						<li class="fragment">Easier maintenance</li>
+					</ul>
+				</section>
+				
+				<section>
+					<h2>WordPress 3.0</h2>
+					<p>The merging of WordPress MU and WordPress made this decision easier.</p>
+				</section>
+				
+				<section>
+					<h1>Redesigning Pew Global</h1>
+				</section>
+				
+				<section data-background="img/pewglobal-homepage-2009-10-30.jpg" class="full-bleed">
+					<p><a href="img/pewglobal-homepage-2009-10-30.jpg" target="_blank"></a></p>
+				</section>
+				
+				<section data-background="img/pewglobal-homepage-2009-11-14.png" class="full-bleed">
+					<p><a href="img/pewglobal-homepage-2009-11-14.png" target="_blank"></a></p>
+				</section>
+				
+				<section>
+					<h2>Redesign First,<br> CMS Migration Second</h2>
+				</section>
+				
+				<section>
+					<h1>Pew Social Trends</h1>
+				</section>
+				
+				<section data-background="img/pewsocialtrends-2010-01-01.jpg" class="full-bleed">
+					<p><a href="img/pewsocialtrends-2010-01-01.jpg" target="_blank"></a></p>
+				</section>
+				
+				<section data-background="img/pewsocialtrends-2011-02-03.png" class="full-bleed">
+					<p><a href="img/pewsocialtrends-2011-02-03.png" target="_blank"></a></p>
+				</section>
+				
+				<section>
+					<h1>People Press</h1>
+				</section>
+				
+				<section data-background="img/people-press-2011-03-28.jpg" class="full-bleed">
+					<p><a href="img/people-press-2011-03-28.jpg" target="_blank"></a></p>
+				</section>
+				
+				<section data-background="img/people-press-2011-04-13.png" class="full-bleed">
+					<p><a href="img/people-press-2011-04-13.png" target="_blank"></a></p>
+				</section>
+				
+				<section>
+					<h1>Pew Hispanic</h1>
+				</section>
+				
+				<section data-background="img/pewhispanic-2011-07-02.png" class="full-bleed">
+					<p><a href="img/pewhispanic-2011-07-02.png" target="_blank"></a></p>
+				</section>
+				
+				<section data-background="img/pewhispanic-2012-01-11.png" class="full-bleed">
+					<p><a href="img/pewhispanic-2012-01-11.png" target="_blank"></a></p>
+				</section>
+				
+				<section>
+					<h1>Pew Research</h1>
+				</section>
+				
+				<section data-background="img/pewresearch-2012-12-17.png" class="full-bleed">
+					<p><a href="img/pewresearch-2012-12-17.png" target="_blank"></a></p>
+				</section>
+				
+				<section data-background="img/pewresearch-2014-05-31.png" class="full-bleed">
+					<p><a href="img/pewresearch-2014-05-31.png" target="_blank"></a></p>
+				</section>
+				
+				<section>
+					<h2>A new standard</h2>
+					<ul>
+						<li class="fragment">Responsive</li>
+						<li class="fragment">Updated Look</li>
+						<li class="fragment">Web fonts</li>
+						<li class="fragment">Clear content hierarchy</li>
+						<li class="fragment">White space!</li>
+					</ul>
+				</section>
+				
+				<section>
+					<h2>Refactoring Needed</h2>
+					<ul>
+						<li class="fragment">From single mammoth stylesheet to CSS chunks</li>
+						<li class="fragment">Centralize common theme files</li>
+						<li class="fragment">Made new features interoperable across sites</li>
+						<li class="fragment">Update older sites, use new look for new site migrations</li>
+					</ul>
+				</section>
+				
+				<section>
+					<h1>Scaling</h1>
+				</section>
+				
+				<section>
+					<h2>Building a "big boy" website</h2>
+					<p>How can we&hellip;</p>
+					<ul>
+						<li class="fragment">Handle thousands of visitors a day?</li>
+						<li class="fragment">Keep server response times low?</li>
+						<li class="fragment">Make caching transparent?</li>
+					</ul>
+				</section>
+				
+				<section>
+					<h2>Run everything through a CDN</h2>
+					<ul>
+						<li class="fragment">HTML/CSS/JavaScript/Images are cached on servers closer to the visitor</li>
+						<li class="fragment">If our servers go down, the content is still accessible</li>
+						<li class="fragment">CDN has API to flush URLs when they change</li>
+				</section>
+				
+				<section>
+					<h2>Stats</h2>
+					<ul>
+						<li class="fragment">79GB - 115GB of traffic per day</li>
+						<li class="fragment">XXX visitors</li>
+						<li class="fragment">997 concurrent visitors</li>
+						<li class="fragment">&lt; 500ms average response time</li>
+					</ul>
+				</section>
+				
+				<section>
+					<h1>Taxonomies</h1>
+				</section>
+				
+				<section>
+					<h1>Quizzes</h1>
+				</section>
+				
+				<section>
+					<h1>Thank You!</h1>
+					<p class="tweet-me"><a href="https://twitter.com/kingkool68" target="_blank"><img src="img/twitter-logo.png" class="no-border" alt="Tweet me!"> @kingkool68</a></p>
+				</section>
+			</div>
+
+		</div>
+
+		<script src="reveal.js/lib/js/head.min.js"></script>
+		<script src="reveal.js/js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme || 'sky', // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
