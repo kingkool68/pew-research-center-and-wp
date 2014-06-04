@@ -35,19 +35,50 @@ table {
 width:80%;
 }
 
+div.tweet {
+margin:15px auto;
+width:50%;
+}
+
 /* Animating full-screen images to scroll automagically */
-.reveal .slides>section.full-bleed a {
-display:block;
-min-height:640px;
+.reveal .slides > section.full-bleed a {
+display: block;
+min-height: 640px
 }
+
 .reveal .slide-background {
-background-position:0 100%;
+background-position: 0 100%
 }
+
 .slide-background.present[data-background-hash] {
-background-position:0 0;
+background-position: 0 0;
 -webkit-animation: animatedBackground 55s 1.5s infinite ease alternate;
+-moz-animation: animatedBackground 55s 1.5s infinite ease alternate;
+-o-animation: animatedBackground 55s 1.5s infinite ease alternate;
+animation: animatedBackground 55s 1.5s infinite ease alternate;
 }
-@-webkit-keyframes animatedBackground {
-	from { background-position: 0 0; }
-	to { background-position: 0 100%; }
+
+@-webkit-keyframes {
+	0% {
+        background-position: 0 0;
+        }
+	100% {
+        background-position: 0 100%;
+        }
+}
+@-moz-keyframes {
+	0% {
+        background-position: 0 0;
+        }
+	100% {
+        background-position: 0 100%;
+    }
+}
+@keyframes animatedBackground {
+    0% {
+        background-position: 0 0;
+        }
+	100% {
+        background-position: 0 100%;
+        }
 }
