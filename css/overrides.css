@@ -52,10 +52,10 @@ background-position: 0 100%
 
 .slide-background.present[data-background-hash*=autoscroll] {
 background-position: 0 0;
--webkit-animation: animatedBackground 55s 1.5s infinite ease alternate;
--moz-animation: animatedBackground 55s 1.5s infinite ease alternate;
--o-animation: animatedBackground 55s 1.5s infinite ease alternate;
-animation: animatedBackground 55s 1.5s infinite ease alternate;
+-webkit-animation: animatedBackground 55s 3.5s infinite ease alternate;
+-moz-animation: animatedBackground 55s 3.5s infinite ease alternate;
+-o-animation: animatedBackground 55s 3.5s infinite ease alternate;
+animation: animatedBackground 55s 3.5s infinite ease alternate;
 }
 
 @-webkit-keyframes {
