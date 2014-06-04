@@ -13,15 +13,6 @@ border-bottom:0 none;
 border:0 none;
 box-shadow:none;
 }
-
-.graph .bar {
-width:42%;
-}
-.graph .bar span {
-display:block;
-height:1em;
-background-color:#3B759E;
-}
 p.tweet-me {
 text-align:center;
 padding-top:1.25em;
@@ -38,6 +29,10 @@ padding-top:0.5em;
 
 body.print-pdf img.stretch {
 max-width:75%;
+}
+
+table {
+width:80%;
 }
 
 /* Animating full-screen images to scroll automagically */
