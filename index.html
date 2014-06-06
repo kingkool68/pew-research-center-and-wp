@@ -112,13 +112,11 @@
 				</section>
 				
 				<section>
-					<h1>Intro</h1>
-				</section>
-				
-				<section>
 					<h2>What will this talk cover?</h2>
 					<ul>
-						<li>TKTK</li>
+						<li>Background on Pew Research Center</li>
+						<li>Redesigns</li>
+						<li>Cool Stuff We've Built</li>
 					</ul>
 				</section>
 				
@@ -223,11 +221,11 @@
 				<section>
 					<h2>What were we publishing?</h2>
 					<ul>
-						<li>Reports - An executive summary with a link to a PDF</li>
-						<li>Media Mentions - Links to noteable external articles</li>
-						<li>Datasets - Zip archives of survey data</li>
-						<li>Occasional Special Features</li>
-						<li>Archives</li>
+						<li><strong>Reports</strong> - An executive summary with a link to a PDF</li>
+						<li><strong>Media Mentions</strong> - Links to noteable external articles</li>
+						<li><strong>Datasets</strong> - Zip archives of survey data</li>
+						<li><strong>Occasional Special Features</strong></li>
+						<li><strong>Archives</strong></li>
 					</ul>
 				</section>
 				
@@ -243,6 +241,7 @@
 				
 				<section>
 					<h2>The Microsoft Access Incident</h2>
+					<img src="img/blank-spreadsheet.jpg" alt="Blank Spreadsheet">
 				</section>
 				
 				<section>
@@ -253,13 +252,13 @@
 					<ul>
 						<li class="fragment">Enterprise Solution?</li>
 						<li class="fragment">Open Source?</li>
-						<li class="fragment">Home grown/Roll our own?</li>
+						<li class="fragment">Home grown/roll our own?</li>
 					</ul>
 				</section>
 				
 				<section>
 					<h2>The more you pay, the crappier the CMS</h2>
-					<p>(Graph)</p>
+					<img src="img/price-vs-cms-crappiness.png" alt="Prices vs CMS Crappiness">
 				</section>
 				
 				<section>
@@ -619,16 +618,74 @@
 				</section>
 				
 				<section>
-					<h2>Which evolved into this &hellip;</h2>
+					<h2>Which evolved&hellip;</h2>
 					<a href="img/another-old-landing-page.png" target="_blank"><img src="img/another-old-landing-page.png" alt="Another Old Pew Research Landing Page"></a>
 				</section>
 				
+				<section>
+					<h2>We needed a landing page for our <acronym title="Lesbian, Gay, Bisexual, Transgender">LGBT</acronym> series of reports.</h2>
+					<ul>
+						<li class="fragment">Content from across the Pew Research Center</li>
+						<li class="fragment">Frequently changing as new content is published</li>
+						<li class="fragment">Editorially-controlled ordering<br><br></li>
+					</ul>
+				</section>
+				
+				<section>
+					<h2>Widgets to the rescue?</h2>
+					<ul>
+						<li class="fragment">This would require additional sidebars</li>
+						<li class="fragment">Managing the widgets would mean navigating to different sections of the admin (confusing)</li>
+					</ul>
+				</section>
+				
+				<section>
+					<h2>What if we wanted other landing pages?</h2>
+					<p class="fragment">We would end up with sidebars out the wazoo!</p>
+				</section>
+				
+				<section>
+					<h1>We Needed Something Better!</h1>
+					<p class="fragment">So we built it&hellip;</p>
+				</section>
+				
+				<section>
+					<p>and we call it</p>
+					<h1 class="fragment">WP Gizmos</h1>
+				</section>
+				
+				<section>
+					<h2>WP Gizmos are like per-post/page/whatever widgets.</h2>
+				</section>
+				
+				<section>
+					<h3>WP Gizmos</h3>
+					<ul>
+						<li class="fragment">Drag and drop reordering</li>
+						<li class="fragment">Different types can be mixed and matched</li>
+						<li class="fragment">Add as many as you want</li>
+						<li class="fragment">Stay on the same page you're editing</li>
+						<li class="fragment">Flexible!</li>
+					</ul>
+				</section>
+				
+				<section>
+					<h3>Gizmo Metabox</h3>
+					<img src="img/closed-gizmos.png">
+				</section>
+				
+				<section>
+					<h3>Editing a Gizmo</h3>
+					<img src="img/edit-a-gizmo.png">
+				</section>
+		
 				<section data-background="img/pewresearch-package-page.png" data-background-repeat="autoscroll" class="full-bleed">
 					<p><a href="img/pewresearch-package-page.png" target="_blank"></a></p>
 				</section>
 				
 				<section>
-					<h1>Archive Filters</h1>
+					<h2>Available on GitHub</h2>
+					<p><a href="https://github.com/kingkool68/WP-Gizmos" target="_blank">github.com/kingkool68/WP-Gizmos</a></p>
 				</section>
 				
 				<section>
@@ -636,19 +693,85 @@
 				</section>
 				
 				<section>
+					<h2>We have two types of pages&hellip;</h2>
+					<ul>
+						<li class="fragment">Pages to read</li>
+						<li class="fragment">Pages to help you find something to read</li>
+					</ul>
+				</section>
+				
+				<section>
+					<h2>Archives are pages aimed to help you find something to read.</h2>
+				</section>
+				
+				<section>
+					<h2>At the bottom of archive pages you see this&hellip;</h2>
+					<a href="img/pagination.png" target="_blank"><img src="img/pagination.png" alt="Pew Research Pagination"></a>
+				</section>
+				
+				<section>
+					<h2>Wouldn't it be better to see more posts?</h2>
+				</section>
+				
+				<section>
+					<ul>
+						<li>Using JavaScript we can fetch the next page of posts in the background</li>
+						<li class="fragment">No need to duplicate archive logic in PHP and JavaScript</li>
+						<li class="fragment">The back button works!</li>
+					</ul>
+				</section>
+				
+				<section>
+					<h2>Available on Github</h2>
+					<p><a href="https://gist.github.com/kingkool68/9277919" target="_blank">gist.github.com/kingkool68/9277919</a></p>
+				</section>
+				
+				<section>
 					<h1>Data Trends</h1>
 				</section>
 				
 				<section>
-					<h1>Media Library Enhancements</h1>
+					<h1>Media Library Enhancement</h1>
+				</section>
+				
+				<section data-background="img/copy-image-urls.gif" class="full-bleed">
+					<p><a href="img/copy-image-urls.gif" target="_blank"></a></p>
 				</section>
 				
 				<section>
-					<h1>Plugin Enhancements</h1>
+					<h1>Plugins</h1>
+				</section>
+				
+				<section>
+					<h2>We have 87 Plugins</h2>
+				</section>
+				
+				<section data-background="img/quick-filtering-plugins.gif" class="full-bleed">
+					<p><a href="img/quick-filtering-plugins.gif" target="_blank"></a></p>	
+				</section>
+				
+				<section data-background="img/comparing-plugins.gif" class="full-bleed">
+					<p><a href="img/comparing-plugins.gif" target="_blank"></a></p>	
+				</section>
+				
+				<section>
+					<h2>Which plugins aren't activated?</h2>
+					<a href="img/sitewide-inactive-plugins.png" target="_blank"><img src="img/sitewide-inactive-plugins.png"></a>
+				</section>
+				
+				<section>
+					<h2>Which site has a plugin active?</h2>
+					<a href="img/sitewide-active-plugins.png" target="_blank"><img src="img/sitewide-active-plugins.png"></a>
 				</section>
 				
 				<section>
 					<h1>Custom Feeds</h1>
+				</section>
+				
+				<section>
+					<h2>In Conclusion</h2>
+					<h1 class="fragment">WordPress is awesome!</h1>
+					<p class="fragment">(Textfields of HTML blobs suck)</p>
 				</section>
 				
 				<section>

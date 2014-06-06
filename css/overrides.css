@@ -34,6 +34,13 @@ max-width:75%;
 table {
 width:80%;
 }
+.reveal table th,
+.reveal table td {
+padding:0.1em 0.25em;
+}
+table .highlight td {
+background-color:yellow;
+}
 
 div.tweet {
 margin:15px auto;
