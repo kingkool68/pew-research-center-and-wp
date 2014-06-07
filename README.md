@@ -1,6 +1,8 @@
-WP Cache Rules Everything Around Me (C.R.E.A.M.)
+The Pew Research Center and WordPress
 ===================================
 
-My presentation about WordPress and caching from [WordCamp Baltimore 2013](http://2013.baltimore.wordcamp.org/)
+### How I Spent the Last 5 Years Playing with WordPress and Building PewResearch.org ###
 
-### [View the slides](http://kingkool68.com/wp-cream) or on [SlideShare](http://www.slideshare.net/kingkool68/cream-26867720) ###
+Presented June 7th at [WordCamp Philly 2014](2014.philly.wordcamp.org/)
+
+### [View the slides](http://kingkool68.com/pew-research-center-and-wp/) ###
